@@ -1,0 +1,140 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  padding: 2rem 0;
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(md) {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: auto;
+    }
+
+    &--item {
+      margin: 0 1rem;
+      overflow: hidden;
+
+      a {
+        color: $color-primary;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .nav__buttonWrapper {
+    display: flex;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--button {
+      display: block;
+      background-color: $color-primary;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        background-color: $color-primary;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+      }
+
+      &:before {
+        margin-top: -8px;
+      }
+
+      &:after {
+        margin-top: 8px;
+      }
+    }
+
+    @include respond(md) {
+      display: none;
+    }
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+}
+
+#menu-toggle:checked+.nav__buttonWrapper .nav__buttonWrapper--button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked+.nav__buttonWrapper .nav__buttonWrapper--button {
+  background: transparent;
+}
+
+#menu-toggle:checked+.nav__buttonWrapper .nav__buttonWrapper--button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@include respond(mdMax) {
+
+  #menu-toggle~.nav__menu .nav__menu--item {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked~.nav__menu .nav__menu--item {
+    height: 4em;
+    padding: 1rem;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .nav__menu>.nav__menu--item {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    background-color: $color-primary;
+
+    a {
+      color: $color-grey-light;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

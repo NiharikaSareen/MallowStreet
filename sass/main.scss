@@ -1,0 +1,11 @@
+@import "base";
+@import "typography";
+@import "mixin";
+@import "utilities";
+@import "navbar";
+@import "page";
+
+* {
+  padding: 0;
+  margin: 0;
+}

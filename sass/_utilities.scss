@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  padding-right: .75rem;
+  padding-left: .75rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include respond(sm) {
+    max-width: 540px;
+  }
+
+  @include respond(md) {
+    max-width: 720px;
+  }
+
+  @include respond(lg) {
+    max-width: 960px;
+  }
+
+  @include respond(xl) {
+    max-width: 1140px;
+  }
+
+  @include respond(xxl) {
+    max-width: 1320px;
+  }
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.blue {
+  color: $color-primary;
+}
+
+.blue-bg {
+  color: $color-primary;
+  background-color: $color-tertiary;
+}

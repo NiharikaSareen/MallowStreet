@@ -1,0 +1,21 @@
+$color-primary: #0079ad;
+$color-secondary: #364045;
+$color-tertiary:#e3f3fb;
+$color-grey-light: #f8f9f9;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: normal;
+  line-height: 1.6;
+}

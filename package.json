@@ -1,0 +1,15 @@
+{
+  "name": "mallowstreet",
+  "version": "1.0.0",
+  "description": "Mallow Street test",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Niharika",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
